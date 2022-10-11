@@ -1,3 +1,6 @@
+Primeiro projeto utilizando react com typescript
+
+passos:
 1 npm create vite@latest
 2 npm install
 3 rodar projeto para teste
