@@ -7,3 +7,6 @@ passos:
 npm run dev
 
 4 deletar = assets, app.css, app.tsx, index.css
+
+5 - npm install --save styled-components
+6 - npm i --save-dev @types/styled-components
