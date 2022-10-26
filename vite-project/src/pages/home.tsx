@@ -1,9 +1,23 @@
-import React from "react"
+import { Card } from "../components/card/card"
+import { getProducts } from "../mocks/products"
+import { CardListDiv } from "./styles"
+import { useEffect, useState } from "react";
+import { Product } from "../utils/types/product.type";
 
 export function Home(){
+  const [products, setProducts] = useState<Product[]>([])
+
+  async function getProductsInfo(){
+    const allProducts = await getProducts();
+    setProducts(allProducts)
+  }
+
+  useEffect(()=>{getProductsInfo();
+  }, [])
+
   return(
-    <div>
-      Home
-    </div>
+    <CardListDiv>
+      {products.map(product => <Card id={product.id} description={product.description} imageUrl={product.imageUrl} name={product.name} price={product.price}/>)}
+    </CardListDiv>
   )
 }
