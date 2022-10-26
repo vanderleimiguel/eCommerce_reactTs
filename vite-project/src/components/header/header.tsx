@@ -4,13 +4,16 @@ import {
   HeaderSearch,
   HeaderButtons
 } from './styles'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
     <HeaderComponent>
       <HeaderLogo>
-        <h1>Tabajara</h1>
-        <img src="" alt="logo" />
+        <Link to="/">
+          <h1>Tabajara</h1>
+          <img src="" alt="logo" />
+        </Link>
       </HeaderLogo>
       <HeaderSearch>
         <input type="text" placeholder="Search Product" />
