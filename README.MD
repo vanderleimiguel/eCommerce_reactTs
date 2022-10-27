@@ -10,3 +10,4 @@ npm run dev
 
 5 - npm install --save styled-components
 6 - npm i --save-dev @types/styled-components
+7 - npm install react-router-dom@6
