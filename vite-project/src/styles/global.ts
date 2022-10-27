@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
     * {
@@ -26,4 +26,12 @@ export default createGlobalStyle`
         background-color: rgba(0,0,0, 0.9);
         color: #FFFF
     }
+`;
+
+export const Content = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 `;
