@@ -1,6 +1,29 @@
-import { Product } from "../utils/types/product.type";
-import { productList } from "./productList";
+import { Product } from '../utils/types/product.type'
+import { productList } from './productList'
+import axios from 'axios'
 
-export async function getProducts(): Promise<Product[]> {
-  return productList
+axios.create({
+  baseURL: 'http://localhost',
+  headers: { 'Content-Type': 'application/json' }
+})
+
+export const api = {
+  getProducts: async (): Promise<Product[] | undefined> => {
+    // return productList
+    try {
+      const products = await axios.get('/product')
+      return products.data
+    } catch (err: any) {
+      alert('Erro no servidor')
+    }
+  },
+  createProduct: async (product: Product): Promise<Product | undefined> => {
+    // productList.push(product)
+    try {
+      const newProduct = await axios.post('/product/create', product)
+      return newProduct.data
+    } catch (err: any) {
+      alert('Erro ao criar o produto')
+    }
+  }
 }
