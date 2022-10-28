@@ -1,5 +1,5 @@
-import { Product } from '../utils/types/product.type'
-import { productList } from './productList'
+import { Product } from '../types/product.type'
+import { productList } from '../../mocks/productList'
 import axios from 'axios'
 
 axios.create({

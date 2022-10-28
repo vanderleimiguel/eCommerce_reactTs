@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { productList } from '../../mocks/productList'
 import { Product } from '../../utils/types/product.type'
 import { ContentDiv } from './styles'
-import { api } from '../../mocks/products'
+import { api } from '../../utils/api/api'
 
 export function CreateProduct() {
   const navigate = useNavigate()
