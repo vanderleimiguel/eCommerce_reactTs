@@ -1,11 +1,9 @@
-import { Product } from '../types/product.type'
+import { Product, ProductInput } from '../types/product.type'
 import { productList } from '../../mocks/productList'
 import axios from 'axios'
 
-axios.create({
-  baseURL: 'http://localhost',
-  headers: { 'Content-Type': 'application/json' }
-})
+axios.defaults.baseURL = 'http://localhost'
+axios.defaults.headers.post['Content-Type'] = 'application/json'
 
 export const api = {
   getProducts: async (): Promise<Product[] | undefined> => {
@@ -17,7 +15,9 @@ export const api = {
       alert('Erro no servidor')
     }
   },
-  createProduct: async (product: Product): Promise<Product | undefined> => {
+  createProduct: async (
+    product: ProductInput
+  ): Promise<Product | undefined> => {
     // productList.push(product)
     try {
       const newProduct = await axios.post('/product/create', product)

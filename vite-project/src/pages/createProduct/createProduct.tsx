@@ -1,7 +1,7 @@
 import { FormEvent, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { productList } from '../../mocks/productList'
-import { Product } from '../../utils/types/product.type'
+import { ProductInput } from '../../utils/types/product.type'
 import { ContentDiv } from './styles'
 import { api } from '../../utils/api/api'
 
@@ -11,17 +11,18 @@ export function CreateProduct() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
-    const newProduct: Product = {
-      id: '1',
+    const newProduct: ProductInput = {
       name: e.currentTarget.productName.value,
       description: e.currentTarget.productDescription.value,
-      price: e.currentTarget.productPrice.value,
+      price: parseFloat(e.currentTarget.productPrice.value),
       imageUrl: e.currentTarget.productImage.value
     }
 
-    await api.createProduct(newProduct)
+    const product = await api.createProduct(newProduct)
 
-    navigate('/')
+    if (product) {
+      navigate('/')
+    }
   }
 
   return (
