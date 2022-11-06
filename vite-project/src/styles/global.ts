@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
     * {
@@ -7,7 +7,6 @@ export default createGlobalStyle`
         outline: 0;
         box-sizing: border-box;
     }
-
     html, body, #root {
         display: flex;
         min-height: 100%;
@@ -15,18 +14,16 @@ export default createGlobalStyle`
         flex-direction: column;
         align-items: center;
     }
-
     #root {
         display: flex;
         justify-content: space-between;
         min-height: 100vh;
     }
-    
     body {
         background-color: rgba(0,0,0, 0.9);
         color: #FFFF
     }
-`;
+`
 
 export const Content = styled.div`
   display: flex;
@@ -34,4 +31,4 @@ export const Content = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-`;
+`

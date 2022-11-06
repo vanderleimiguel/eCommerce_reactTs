@@ -1,32 +1,27 @@
 import { Card } from '../../components/card/card'
-import { api } from '../../utils/api/api'
 import { CardListDiv } from './styles'
-import { useEffect, useState } from 'react'
-import { Product } from '../../utils/types/product.type'
+import { useState } from 'react'
+
+import { useProducts } from '../../hooks/products'
 
 export function Home() {
-  const [products, setProducts] = useState<Product[]>([])
+  const { products } = useProducts()
 
-  async function getProductsInfo() {
-    const allProducts = await api.getProducts()
-    setProducts(allProducts ?? [])
-  }
-
-  useEffect(() => {
-    getProductsInfo()
-  }, [])
-
+  // KISS - Keep It Simple and Stupid
   return (
     <CardListDiv>
-      {products.map(product => (
-        <Card
-          id={product.id}
-          description={product.description}
-          imageUrl={product.imageUrl}
-          name={product.name}
-          price={product.price}
-        />
-      ))}
+      {products.map(product => {
+        return (
+          <Card
+            key={product.id}
+            id={product.id}
+            description={product.description}
+            imageURL={product.imageURL}
+            name={product.name}
+            price={product.price}
+          />
+        )
+      })}
     </CardListDiv>
   )
 }

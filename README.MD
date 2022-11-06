@@ -12,3 +12,4 @@ npm run dev
 6 - npm i --save-dev @types/styled-components
 7 - npm install react-router-dom@6
 8 - npm install axios
+9 - npm install sweetalert --save

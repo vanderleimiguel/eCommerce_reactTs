@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ContentDiv = styled.div`
   display: flex;
@@ -7,24 +7,20 @@ export const ContentDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   h2 {
     margin: 20px;
   }
-
   form {
     display: flex;
     flex-direction: column;
     width: 30%;
   }
-
   input {
     border-radius: 10px;
     color: black;
     padding-left: 5px;
     width: 100%;
   }
-
   section {
     display: flex;
     width: 100%;
@@ -32,7 +28,6 @@ export const ContentDiv = styled.div`
     justify-content: center;
     padding-top: 10px;
   }
-  
   button {
     display: flex;
     height: 25px;
@@ -48,4 +43,4 @@ export const ContentDiv = styled.div`
       background-color: blue;
     }
   }
-`;
+`

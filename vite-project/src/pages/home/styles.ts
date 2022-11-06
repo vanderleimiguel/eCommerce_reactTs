@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const CardListDiv = styled.div`
   display: flex;
@@ -7,4 +7,4 @@ export const CardListDiv = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-`;
+`
