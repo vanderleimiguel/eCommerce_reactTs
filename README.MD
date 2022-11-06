@@ -13,3 +13,4 @@ npm run dev
 7 - npm install react-router-dom@6
 8 - npm install axios
 9 - npm install sweetalert --save
+10 - npm install react-icons --save
